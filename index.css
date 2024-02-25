@@ -1,5 +1,6 @@
 /* Add your font via Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400|Montserrat:500|Montserrat:700);
 
 /* CSS Reset. You don't need to understand these.
  * They're only here to make CSS consistent across all browsers. */
@@ -22,11 +23,62 @@
   --orange_100: #ffedcc;
   --purple_main: #340b67;
   --purple_main_hover: #b49fcc;
+  --black: #041a2f;
+  --white: #ffffff;
+  --primary: #ff69ad;
+  --dark_purple: #461667;
+  --dark_blue: #2399BE;
 }
 
+body {
+  background: linear-gradient(to right, var(--dark_purple), var(--dark_blue));
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+max-width: 992px;
+
 html {
-  background-color: var(--body_bg);
   font-family: "Rubik";
+}
+
+.anta-regular {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12rem;
+  color: white;
+  font-family: "Rubik";
+  font-size: 1.2rem;
+  width: 75%;
+  line-height: 2;
+}
+
+.neonchat {
+  border-radius: 10px;
+}
+
+.Caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: -2rem;
+  color: white;
+  font-family: "Rubik";
+  font-size: 1.2rem;
+  width: 75%;
+  line-height: 2;
 }
 
 .container {
@@ -37,7 +89,7 @@ html {
 }
 
 .nav {
-  background-color: var(--purple_300);
+  background: linear-gradient(to right, var(--dark_purple), var(--dark_blue));
   padding: 2rem;
   width: 100%;
   display: flex;
@@ -53,16 +105,82 @@ html {
 }
 
 .title {
-  color: var(--sky_300);
+  color: white;
   margin-top: 2rem;
   font-size: 2rem;
+  font-family: "Anta";
+  font-style: normal;
+  font-weight: 700;
 }
 
 .pictureCaption {
   margin-top: 1rem;
 }
 
-.fullypic {
-  margin-top: 2rem;
-  object-fit: cover;
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8rem;
+  color: white;
+  font-family: "Rubik";
+  font-size: 1.2rem;
+  width: 75%;
+  line-height: 2;
+}
+
+.button {
+  position: relative;
+  border: 0;
+  transition: 0.5s;
+  z-index: 1;
+  min-width: 15rem;
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  font-family: "Rubik";
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: var(--black);
+  color: var(--white);
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+  }
+
+  &.--glow {
+    &:hover {
+      background: var(--primary);
+      box-shadow: 0 0 5px var(--primary), 
+0 0 25px var(--primary);
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 var(--black);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--black);
+  }
+  100% {
+    box-shadow: 0 0 0 var(--black);
+  }
+}
+
+
+
